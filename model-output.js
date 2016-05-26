@@ -1,5 +1,5 @@
 const config = {
-  leftMarginSpacing: 6
+  leftMarginSpacing: 8
 };
 
 function displayModelName(modelDetails) {
@@ -44,7 +44,7 @@ function formatPinForOutput(pin, isLeft) {
       break;
       
     case 'gpio':
-      pinSpecDisplay = isLeft ? leftPad(`GPIO${pin.gpioId}`, ' ', config.leftMarginSpacing) : `GPIO${pin.gpioId}`;
+      pinSpecDisplay = isLeft ? leftPad(`GPIO(${pin.gpioId})`, ' ', config.leftMarginSpacing) : `GPIO(${pin.gpioId})`;
       break;
   }
   return pinSpecDisplay;
