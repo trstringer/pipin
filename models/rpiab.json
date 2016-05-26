@@ -1,0 +1,44 @@
+{
+  "name": "Raspberry Pi Model A and B",
+  "pins": [
+    {
+      "physicalId": 1,
+      "type": "constantPower",
+      "voltage": 3.3
+    },
+    {
+      "physicalId": 2,
+      "type": "constantPower",
+      "voltage": 5
+    },
+    {
+      "physicalId": 3,
+      "type": "gpio",
+      "gpioId": 2
+    },
+    {
+      "physicalId": 4,
+      "type": "constantPower",
+      "voltage": 5
+    },
+    {
+      "physicalId": 5,
+      "type": "gpio",
+      "gpioId": 3
+    },
+    {
+      "physicalId": 6,
+      "type": "ground"
+    },
+    {
+      "physicalId": 7,
+      "type": "gpio",
+      "gpioId": 4
+    },
+    {
+      "physicalId": 8,
+      "type": "gpio",
+      "gpioId": 14
+    }
+  ]
+}
