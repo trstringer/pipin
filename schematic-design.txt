@@ -1,0 +1,15 @@
+<Model Name>
+
+            +-------+
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+ <pin-spec> | o | o | <pin-spec>
+            +-------+
