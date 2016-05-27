@@ -50,6 +50,12 @@ function formatPinForOutput(pin, isLeft) {
         leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + leftPad(`GPIO(${pin.gpioId})`, ' ', config.leftMarginSpacing) : 
         rightPad(`GPIO(${pin.gpioId})`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
       break;
+      
+    case 'eeprom':
+      pinSpecDisplay = isLeft ?
+        leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + leftPad(`EEPROM`, ' ', config.leftMarginSpacing) :
+        rightPad(`EEPROM`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
+      break;
   }
   return pinSpecDisplay;
 }

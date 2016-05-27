@@ -125,6 +125,71 @@
       "physicalId": 26,
       "type": "gpio",
       "gpioId": 7
+    },
+    {
+      "physicalId": 27,
+      "type": "eeprom"
+    },
+    {
+      "physicalId": 28,
+      "type": "eeprom"
+    },
+    {
+      "physicalId": 29,
+      "type": "gpio",
+      "gpioId": 5
+    },
+    {
+      "physicalId": 30,
+      "type": "ground"
+    },
+    {
+      "physicalId": 31,
+      "type": "gpio",
+      "gpioId": 6
+    },
+    {
+      "physicalId": 32,
+      "type": "gpio",
+      "gpioId": 12
+    },
+    {
+      "physicalId": 33,
+      "type": "gpio",
+      "gpioId": 13
+    },
+    {
+      "physicalId": 34,
+      "type": "ground"
+    },
+    {
+      "physicalId": 35,
+      "type": "gpio",
+      "gpioId": 19
+    },
+    {
+      "physicalId": 36,
+      "type": "gpio",
+      "gpioId": 16
+    },
+    {
+      "physicalId": 37,
+      "type": "gpio",
+      "gpioId": 26
+    },
+    {
+      "physicalId": 38,
+      "type": "gpio",
+      "gpioId": 20
+    },
+    {
+      "physicalId": 39,
+      "type": "ground"
+    },
+    {
+      "physicalId": 40,
+      "type": "gpio",
+      "gpioId": 21
     }
   ]
 }
