@@ -9,7 +9,7 @@ program
   .parse(process.argv);
   
 function showPinSchematic(model, cb) {
-  const fileName = `./models/${model}.json`;
+  const fileName = `${__dirname}/models/${model}.json`;
   fs.readFile(fileName, (err, data) => {
     if (err) {
       cb(err);
