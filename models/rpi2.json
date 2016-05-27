@@ -87,6 +87,44 @@
       "physicalId": 18,
       "type": "gpio",
       "gpioId": 24
+    },
+    {
+      "physicalId": 19,
+      "type": "gpio",
+      "gpioId": 10
+    },
+    {
+      "physicalId": 20,
+      "type": "ground"
+    },
+    {
+      "physicalId": 21,
+      "type": "gpio",
+      "gpioId": 9
+    },
+    {
+      "physicalId": 22,
+      "type": "gpio",
+      "gpioId": 25
+    },
+    {
+      "physicalId": 23,
+      "type": "gpio",
+      "gpioId": 11
+    },
+    {
+      "physicalId": 24,
+      "type": "gpio",
+      "gpioId": 8
+    },
+    {
+      "physicalId": 25,
+      "type": "ground"
+    },
+    {
+      "physicalId": 26,
+      "type": "gpio",
+      "gpioId": 7
     }
   ]
 }
