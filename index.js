@@ -33,6 +33,17 @@ if (program.model) {
       });
       break;
 
+    case 'rpi2':
+      showPinSchematic('rpi2', (err, modelDetails) => {
+        if (err) {
+          console.error('error reading rpi2');
+        }
+        else if (modelDetails) {
+          displaySchematic(modelDetails);
+        }
+      });
+      break;
+
     default:
       console.warn('unknown model');
   }
