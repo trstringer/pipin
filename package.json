@@ -1,6 +1,6 @@
 {
   "name": "pipin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Print out Raspberry Pi pins",
   "bin": {
     "pipin": "./app.js"
