@@ -1,6 +1,7 @@
 var program = require('commander');
 var fs = require('fs');
 var displaySchematic = require('./model-output.js');
+var utility = require('./utility.js');
 
 program
   .version('1.0.0')
@@ -42,7 +43,7 @@ function getModelFiles(cb) {
           console.log(`Error retrieving model name for ${files[i]}`);
         }
         else {
-          console.log(`${modelAbbr} -- ${modelName}`);
+          console.log(`${utility.rightPad(modelAbbr, ' ', 8)} ${modelName}`);
         }
       });
     }

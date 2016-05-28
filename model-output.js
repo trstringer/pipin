@@ -1,3 +1,5 @@
+var utility = require('./utility.js');
+
 const config = {
   leftMarginSpacing: 8,
   physicalIdMargin: 5
@@ -35,50 +37,29 @@ function formatPinForOutput(pin, isLeft) {
   switch (pin.type) {
     case 'constantPower':
       pinSpecDisplay = isLeft ? 
-        leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + leftPad(`${pin.voltage}V`, ' ', config.leftMarginSpacing) : 
-        rightPad(`${pin.voltage}V`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
+        utility.leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + utility.leftPad(`${pin.voltage}V`, ' ', config.leftMarginSpacing) : 
+        utility.rightPad(`${pin.voltage}V`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
       break;
       
     case 'ground':
       pinSpecDisplay = isLeft ? 
-        leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + leftPad(`GND`, ' ', config.leftMarginSpacing) : 
-        rightPad(`GND`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
+        utility.leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + utility.leftPad(`GND`, ' ', config.leftMarginSpacing) : 
+        utility.rightPad(`GND`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
       break;
       
     case 'gpio':
       pinSpecDisplay = isLeft ? 
-        leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + leftPad(`GPIO(${pin.gpioId})`, ' ', config.leftMarginSpacing) : 
-        rightPad(`GPIO(${pin.gpioId})`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
+        utility.leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + utility.leftPad(`GPIO(${pin.gpioId})`, ' ', config.leftMarginSpacing) : 
+        utility.rightPad(`GPIO(${pin.gpioId})`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
       break;
       
     case 'eeprom':
       pinSpecDisplay = isLeft ?
-        leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + leftPad(`EEPROM`, ' ', config.leftMarginSpacing) :
-        rightPad(`EEPROM`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
+        utility.leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + utility.leftPad(`EEPROM`, ' ', config.leftMarginSpacing) :
+        utility.rightPad(`EEPROM`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
       break;
   }
   return pinSpecDisplay;
-}
-
-function leftPad(input, padChar, padLength) {
-  var i;
-  var tempOutput = '';
-  for (i = 0; i < padLength; i++) {
-    tempOutput += padChar;
-  }
-  
-  tempOutput += input;
-  return tempOutput.substring(tempOutput.length - padLength);
-}
-
-function rightPad(input, padChar, padLength) {
-  var i;
-  var tempOutput = input;
-  for (i = 0; i < padLength; i++) {
-    tempOutput += padChar;
-  }
-  
-  return tempOutput.substring(0, padLength);
 }
 
 function displayPins(modelDetails) {
