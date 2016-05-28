@@ -2,9 +2,10 @@ var program = require('commander');
 var fs = require('fs');
 var displaySchematic = require('./model-output.js');
 var utility = require('./utility.js');
+var packageConfig = require('./package.json');
 
 program
-  .version('1.0.0')
+  .version(packageConfig.version)
   .option('-m, --model [model]', 'Show pins for model')
   .option('-l, --list', 'List all models')
   .parse(process.argv);
