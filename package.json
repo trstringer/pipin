@@ -9,7 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Thomas Stringer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tstringer/pipin.git"
+  },
   "license": "ISC",
   "dependencies": {
     "commander": "^2.9.0",
