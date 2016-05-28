@@ -21,12 +21,13 @@ function showPinSchematic(model, cb) {
 }
 
 function getModelNameFromFile(fileName, cb) {
+  const modelAbbr = fileName.split('/').pop().replace('.json', '');
   fs.readFile(fileName, (err, data) => {
     if (err) {
       cb(err);
     }
     else {
-      cb(null, JSON.parse(data).name);
+      cb(null, modelAbbr, JSON.parse(data).name);
     }
   });
 }
@@ -36,12 +37,12 @@ function getModelFiles(cb) {
   fs.readdir(modelPath, (err, files) => {
     var i;
     for (i = 0; i < files.length; i++) {
-      getModelNameFromFile(`${modelPath}/${files[i]}`, (err, modelName) => {
+      getModelNameFromFile(`${modelPath}/${files[i]}`, (err, modelAbbr, modelName) => {
         if (err) {
           console.log(`Error retrieving model name for ${files[i]}`);
         }
         else {
-          console.log(`${files[i]} -- ${modelName}`);
+          console.log(`${modelAbbr} -- ${modelName}`);
         }
       });
     }
