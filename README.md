@@ -1,6 +1,8 @@
-# Raspberry Pi Pin Schematic CLI
+# Raspberry Pi GPIO Pin Controller and Schematic CLI
 
-*Why?  Because it is impossible to remember them, and a pain to find the docs*
+**Set GPIO pins high or low, read them, and show pin schematics**
+
+*Why?  Because there should be an easy way to toggle GPIO pins, and read them... and show pin schematics, because they're impossible to remember*
 
 ## Installation
 
@@ -9,6 +11,21 @@ npm install -g pipin
 ```
 
 ## Usage
+
+```
+  Usage: pipin [options]
+
+  Options:
+
+    -h, --help                 output usage information
+    -V, --version              output the version number
+    -l, --list                 List all models for pin schematics
+    -m, --model [model]        Show pins for model
+    -t, --target [target]      Raspberry Pi to connect for pin operations
+    -u, --username [username]  Username for SSH connection
+    -g, --gpio [gpio]          GPIO pin to read or toggle
+    -s, --state [state]        State (1 or 0) to set GPIO pin (1 = HIGH, 0 = LOW)
+```
 
 ### List available models
 
@@ -51,3 +68,30 @@ Model: Raspberry Pi A+/B+ and Raspberry Pi 2
               +-------+
 ```
 
+### Set a GPIO pin high/low
+
+```
+pipin -t <hostname-or-ip> -u <username> -g <gpio-pin-num> -s <1-or-0>
+```
+
+#### Example
+
+*Set the GPIO 2 pin to high on a host named `raspberrypi` using user `pi`*
+
+```
+pipin -t raspberrypi -u pi -g 2 -s 1
+```
+
+### Read the state of a GPIO pin
+
+```
+pipin -t <hostname-or-ip> -u <username> -g <gpio-pin-num> -s <1-or-0>
+```
+
+#### Example
+
+*Get the value/state of GPIO 2 pin on host `raspberrypi` using user `pi`*
+
+```
+pipin -t raspberrypi -u pi -g 2
+```
