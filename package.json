@@ -17,6 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^2.9.0",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "prompt": "^1.0.0",
+    "ssh2": "^0.5.0"
   }
 }

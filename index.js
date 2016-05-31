@@ -3,11 +3,16 @@ var fs = require('fs');
 var displaySchematic = require('./model-output.js');
 var utility = require('./utility.js');
 var packageConfig = require('./package.json');
+var connector = require('./pi-connector.js');
 
 program
   .version(packageConfig.version)
+  .option('-l, --list', 'List all models for pin schematics')
   .option('-m, --model [model]', 'Show pins for model')
-  .option('-l, --list', 'List all models')
+  .option('-t, --target [target]', 'Raspberry Pi to connect for pin operations')
+  .option('-u, --username [username]', 'Username for SSH connection')
+  .option('-g, --gpio [gpio]', 'GPIO pin to read or toggle')
+  .option('-s, --state [state]', 'State (1 or 0) to set GPIO pin (1 = HIGH, 0 = LOW)')
   .parse(process.argv);
   
 function showPinSchematic(model, cb) {
@@ -57,6 +62,28 @@ function getAllModels(cb) {
   
 if (program.list) {
   getAllModels();
+}
+else if (program.target) {
+  if (!program.username || !program.gpio) {
+    console.log('You must specify a username and gpio pin to target');
+  }
+  else {
+    if (program.state) {
+      // the user wants to set the state of the GPIO pin
+      connector.setPin(program.target, program.username, program.gpio, program.state);
+    }
+    else {
+      // the user wants to read the state
+      connector.readPin(program.target, program.username, program.gpio, (err, isHigh) => {
+        if (err) {
+          console.log(err);
+        }
+        else {
+          console.log(`GPIO(${program.gpio}) :: ${isHigh ? 'HIGH' : 'LOW'}`);
+        }
+      });
+    }
+  }
 }
 else if (program.model) {
   switch (program.model) {
