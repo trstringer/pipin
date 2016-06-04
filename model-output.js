@@ -1,4 +1,5 @@
 var utility = require('./utility.js');
+var chalk = require('chalk');
 
 const config = {
   leftMarginSpacing: 8,
