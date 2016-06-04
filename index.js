@@ -7,12 +7,12 @@ var connector = require('./pi-connector.js');
 
 program
   .version(packageConfig.version)
-  .option('-l, --list', 'List all models for pin schematics')
-  .option('-m, --model [model]', 'Show pins for model')
-  .option('-t, --target [target]', 'Raspberry Pi to connect for pin operations')
-  .option('-u, --username [username]', 'Username for SSH connection')
+  .option('-l, --list', 'list all models for pin schematics')
+  .option('-m, --model [model]', 'show pins for model')
+  .option('-t, --target [target]', 'raspberry Pi to connect for pin operations')
+  .option('-u, --username [username]', 'username for SSH connection')
   .option('-g, --gpio [gpio]', 'GPIO pin to read or toggle')
-  .option('-s, --state [state]', 'State (1 or 0) to set GPIO pin (1 = HIGH, 0 = LOW)')
+  .option('-s, --state [state]', 'state (1 or 0) to set GPIO pin (1 = HIGH, 0 = LOW)')
   .parse(process.argv);
   
 function showPinSchematic(model, cb) {
