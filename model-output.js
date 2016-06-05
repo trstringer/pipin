@@ -25,9 +25,46 @@ function displaySchematicHeaderFooter() {
 
 function displayPinRow(pinLeft, pinRight) {
   var displayRow;
+  const pinChar = 'o';
   
   displayRow = formatPinForOutput(pinLeft, true);
-  displayRow += ' | o | o | ';
+  displayRow += ' | ';
+  switch (pinLeft.type) {
+    case 'constantPower':
+      displayRow += chalk.red(pinChar);
+      break;
+      
+    case 'ground':
+      displayRow += chalk.blue(pinChar);
+      break;
+      
+    case 'gpio':
+      displayRow += chalk.yellow(pinChar);
+      break;
+      
+    case 'eeprom':
+      displayRow += chalk.white(pinChar);
+      break;
+  }
+  displayRow += ' | ';
+  switch (pinRight.type) {
+    case 'constantPower':
+      displayRow += chalk.red(pinChar);
+      break;
+      
+    case 'ground':
+      displayRow += chalk.blue(pinChar);
+      break;
+      
+    case 'gpio':
+      displayRow += chalk.yellow(pinChar);
+      break;
+      
+    case 'eeprom':
+      displayRow += chalk.white(pinChar);
+      break;
+  }
+  displayRow += ' | ';
   displayRow += formatPinForOutput(pinRight, false);
   
   console.log(displayRow);
