@@ -40,24 +40,28 @@ function formatPinForOutput(pin, isLeft) {
       pinSpecDisplay = isLeft ? 
         utility.leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + utility.leftPad(`${pin.voltage}V`, ' ', config.leftMarginSpacing) : 
         utility.rightPad(`${pin.voltage}V`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
+      pinSpecDisplay = chalk.red(pinSpecDisplay);
       break;
       
     case 'ground':
       pinSpecDisplay = isLeft ? 
         utility.leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + utility.leftPad(`GND`, ' ', config.leftMarginSpacing) : 
         utility.rightPad(`GND`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
+      pinSpecDisplay = chalk.blue(pinSpecDisplay);
       break;
       
     case 'gpio':
       pinSpecDisplay = isLeft ? 
         utility.leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + utility.leftPad(`GPIO(${pin.gpioId})`, ' ', config.leftMarginSpacing) : 
         utility.rightPad(`GPIO(${pin.gpioId})`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
+      pinSpecDisplay = chalk.yellow(pinSpecDisplay);
       break;
       
     case 'eeprom':
       pinSpecDisplay = isLeft ?
         utility.leftPad(`[${pin.physicalId}] `, ' ', config.physicalIdMargin) + utility.leftPad(`EEPROM`, ' ', config.leftMarginSpacing) :
         utility.rightPad(`EEPROM`, ' ', config.leftMarginSpacing) + ` [${pin.physicalId}]`;
+      pinSpecDisplay = chalk.white(pinSpecDisplay);
       break;
   }
   return pinSpecDisplay;
