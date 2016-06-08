@@ -19,12 +19,13 @@ npm install -g pipin
 
     -h, --help                 output usage information
     -V, --version              output the version number
-    -l, --list                 List all models for pin schematics
-    -m, --model [model]        Show pins for model
-    -t, --target [target]      Raspberry Pi to connect for pin operations
-    -u, --username [username]  Username for SSH connection
+    -l, --list                 list all models for pin schematics
+    -m, --model [model]        show pins for model
+    -r, --res                  display resistor band chart
+    -t, --target [target]      raspberry Pi to connect for pin operations
+    -u, --username [username]  username for SSH connection
     -g, --gpio [gpio]          GPIO pin to read or toggle
-    -s, --state [state]        State (1 or 0) to set GPIO pin (1 = HIGH, 0 = LOW)
+    -s, --state [state]        state (1 or 0) to set GPIO pin (1 = HIGH, 0 = LOW)
 ```
 
 ### List available models
@@ -69,4 +70,10 @@ pipin -t <hostname-or-ip> -u <username> -g <gpio-pin-num> -s <1-or-0>
 
 ```
 pipin -t raspberrypi -u pi -g 2
+```
+
+### Show the resistor conversion chart
+
+```
+pipin -r
 ```
