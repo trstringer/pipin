@@ -29,7 +29,7 @@ module.exports.showResistorBandChart = () => {
     
     [brown][green][yellow][gold]
        1      5      10K    5%
-    translates to a 150K Ohm +- 5% resistor`;
+    translates to a 150K Ohm +-5% resistor`;
 
   console.log(chart); 
 };
