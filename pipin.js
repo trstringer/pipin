@@ -4,11 +4,13 @@ var displaySchematic = require('./model-output.js');
 var utility = require('./utility.js');
 var packageConfig = require('./package.json');
 var connector = require('./pi-connector.js');
+var resDisplay = require('./res-display.js');
 
 program
   .version(packageConfig.version)
   .option('-l, --list', 'list all models for pin schematics')
   .option('-m, --model [model]', 'show pins for model')
+  .option('-r, --res', 'display resistor band chart')
   .option('-t, --target [target]', 'raspberry Pi to connect for pin operations')
   .option('-u, --username [username]', 'username for SSH connection')
   .option('-g, --gpio [gpio]', 'GPIO pin to read or toggle')
@@ -62,6 +64,9 @@ function getAllModels(cb) {
   
 if (program.list) {
   getAllModels();
+}
+else if (program.res) {
+  resDisplay.showResistorBandChart();
 }
 else if (program.target) {
   if (!program.username || !program.gpio) {
