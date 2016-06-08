@@ -1,6 +1,6 @@
 {
   "name": "pipin",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Set and read Raspberry Pi GPIO pins, and display pin schematics",
   "bin": {
     "pipin": "./pipin"
