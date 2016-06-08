@@ -77,3 +77,5 @@ pipin -t raspberrypi -u pi -g 2
 ```
 pipin -r
 ```
+
+![sample output](/images/pipin-res-chart-screenshot-01.png)
