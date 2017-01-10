@@ -1,2 +1,2 @@
-#!/usr/bin/env Node
+#!/usr/bin/env node
 var index = require('./pipin.js');
